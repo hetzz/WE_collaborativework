@@ -1,4 +1,4 @@
-def generate_marksheet_dictionary(input_list):
+def sort_marksheet(input_list):
 
 	marksheet = dict()
 
@@ -11,6 +11,7 @@ def generate_marksheet_dictionary(input_list):
 	return (sorted_marksheet)
 
 def calculate_ranks(sorted_marksheet):
+
 	rank = 1
 	ranks = []
 	ranks += [(rank, sorted_marksheet[0][0], sorted_marksheet[0][1])]
@@ -26,6 +27,10 @@ def calculate_ranks(sorted_marksheet):
 		ranks += [(rank - num_same_ranks, sorted_marksheet[i][0], sorted_marksheet[i][1])]
 	return(ranks)
 
-f = open("marklist.txt", 'r')
-input_list = f.read().splitlines()
-print(calculate_ranks(generate_marksheet_dictionary(input_list)))
+def get_marksheet():
+
+	f = open("marklist.txt", 'r')
+	input_list = f.read().splitlines()
+	return (calculate_ranks(sort_marksheet(input_list)))
+
+print (get_marksheet())
