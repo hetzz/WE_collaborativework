@@ -41,5 +41,13 @@ def find_prev_i(n, i, order):
 
 ###########################################################
 
+def find_difference(num1, num2, order):
+	index1 = order.index(num1)
+	index2 = order.index(num2)
+	return (abs(index1 - index2))
+
+###########################################################
+
 order = generate_order(5)
 print(find_next_i(45678, 3 ,order))
+print(find_difference(36789, 45678, order))
