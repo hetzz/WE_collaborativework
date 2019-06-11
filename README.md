@@ -4,6 +4,7 @@ We program
 
 ### Contributors 
 
-Kanupriya Singh
-Bhumika Saxena
-Vanitha Kunta
+* Hetal Kuvadia
+* Kanupriya Singh
+* Bhumika Saxena
+* Vanitha Kunta
