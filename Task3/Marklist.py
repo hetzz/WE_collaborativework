@@ -2,6 +2,8 @@ def isgreater(student1 , student2):
     greaterThanCheck = sum(list(1 for i in range(3) if int(student1[i]) > int(student2[i]) ))
     return greaterThanCheck == 3
 
+##########################################################################
+
 def removeTransitive(greaterThanPairs) :
     transitive_pairs = []
     for pair1 in greaterThanPairs:
@@ -30,6 +32,23 @@ def compareFunction() :
         marksList = [list(student.split(" "))for student in marksList]
         
         greaterThanPairs =  generateGreaterPairs(marksList)
-        return removeTransitive(greaterThanPairs)
+        return removeTransitive(greaterThanPairs), marksList
 
-print(compareFunction())
+def prepareChain(result, marksList):
+    x = [pair[0] for pair in result]
+    y = [pair[1] for pair in result]
+    parentList = [parent for parent in x if parent not in y]
+    for parent in parentList :
+        while(1):
+            tree = []
+        
+    return(parentList)
+
+result , marksList = compareFunction()
+print(prepareChain(result ,marksList))
+for x in result :
+    print(x[0]+ " > " + x[1])
+
+
+
+
