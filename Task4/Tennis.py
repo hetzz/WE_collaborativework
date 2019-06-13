@@ -1,4 +1,4 @@
-points = {"0" : "Love","1" :"15" ,"2" :"30" , "3" : "40" , "4" :"Game" , "33" :"Deuce", "diff" :"Adv"}
+points = {"0" : "Love","1" :"15" ,"2" :"30" , "3" : "40" , "33" :"Deuce", "diff" :"Adv"}
 
 
 def check_increment_sets(games_won_A, games_won_B, sets_A, sets_B):
@@ -26,26 +26,35 @@ def decideMatch(Match_str):
             A += 1
         else :
             B += 1
-        if(A >= 4 or B >= 4 and abs(A - B) >= 2):
+        if(abs(A - B) >= 2 and (A >= 4 or B >= 4) ):
             no_of_gamesA , no_of_gamesB = check_increment_games(str(A) + str(B),no_of_gamesA , no_of_gamesB)
             setsA, setsB = check_increment_sets(no_of_gamesA , no_of_gamesB,setsA , setsB)
             A , B = 0,0
     
-    
-     
     return (A,B,no_of_gamesA , no_of_gamesB,setsA , setsB)
 
 ########################################################################
+def printScore(point_for_A, point_for_B):
+    if (A == B and A < 3) :
+        return(points[str(A)] + " All")
 
-A, B, no_of_gamesA , no_of_gamesB,setsA , setsB = decideMatch("ABABBBAAB")
+    elif (A < 4 and B < 4) :
+        return(points[str(A)],points[str(B)])
+
+    elif(A == B and A >=3):
+        return("Deuce")
+
+    elif(A != B and A >=3 and B >=3 and A - B == 1):
+        if(A > B):
+            return(points["diff"] + " 40")
+        else :
+            return("40 " + points["diff"])
+
+A, B, no_of_gamesA , no_of_gamesB,setsA , setsB = decideMatch("ABABBBAABAAABABABABBB")
    
 print(setsA, setsB)
 print(no_of_gamesA ,no_of_gamesB)
-if (A == B and A != 3) :
-    print(points[str(A)] + " All")
-elif (A <= 4 and B <= 4) :
-    print(points[str(A)],points[str(B)])
-
+print(printScore(A,B))
         
         
 
