@@ -54,7 +54,7 @@ A, B, no_of_gamesA , no_of_gamesB,setsA , setsB = decideMatch("ABABBBAABAAABABAB
    
 print(setsA, setsB)
 print(no_of_gamesA ,no_of_gamesB)
-print(printScore(A,B))
+print(*printScore(A,B))
         
         
 
