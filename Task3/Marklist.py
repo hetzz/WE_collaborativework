@@ -1,5 +1,4 @@
 def isgreater(student1 , student2):
-
     greaterThanCheck = sum(list(1 for i in range(3) if int(student1[i]) > int(student2[i]) ))
     return greaterThanCheck == 3
 
@@ -30,7 +29,7 @@ def compareFunction() :
         marksList = list(marksFile.read().strip().split("\n"))
         marksList = [list(student.split(" "))for student in marksList]
         
-        generateThanPairs =  generateGreaterPairs(marksList)
-        return removeTransitive(generateThanPairs)
+        greaterThanPairs =  generateGreaterPairs(marksList)
+        return removeTransitive(greaterThanPairs)
 
 print(compareFunction())
