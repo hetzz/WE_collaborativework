@@ -50,11 +50,11 @@ def printScore(point_for_A, point_for_B):
         else :
             return("40 " + points["diff"])
 
-A, B, no_of_gamesA , no_of_gamesB,setsA , setsB = decideMatch("AAAAAAAAAAAAAAAAAAAAAAAAAA")
+A, B, no_of_gamesA , no_of_gamesB,setsA , setsB = decideMatch("AABBAABA")
    
 print(setsA, setsB)
 print(no_of_gamesA ,no_of_gamesB)
-print(*printScore(A,B))
+print(*"".join(printScore(A,B)))
         
         
 
