@@ -8,12 +8,12 @@ def gen_word_list(n):
     return words
 
 def update_list(given_word , words, similar_num):
-    for i in range(len(words) - 1) :
-        temp = words[i]
-        if (len(set(temp).intersection(given_word))) > similar_num :
-            words.remove(temp)
-    print(words[0])
-    return words
+    remove = []
+    for i in words :
+        if (len(set(i).intersection(set(given_word)))) != similar_num :
+            remove.append(i)
+    remove.append(given_word)
+    return [word for word in words if word not in remove]
 
 def play_game(n):
     words = gen_word_list(n)
@@ -29,10 +29,10 @@ def play_game(n):
         similar_num = input()
         if(similar_num == "WIN"):
             print("YAYAYAYA")
-            con = input("\n\nDo you want to continue?")
+            con = input("\n\nDo you want to continue(y/n)?")
             if con == 'y':
                 restart()
-            else :
+            elif con == 'n' :
                 break
         words = update_list(tmp, words, int(similar_num))
 
